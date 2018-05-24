@@ -1,0 +1,227 @@
+/* ************ BASIC SETUP ************ */
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.mobile-frame {
+  width: 414px;
+  height: 736px;
+  margin: 10px auto 0;
+  padding: 0;
+  background: url("http://i.imgur.com/6QtbIUD.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.wrap {
+  width: 321px;
+  height: 568px;
+  margin: 0 auto 0;
+  padding: 2px;
+  position: relative;
+  top: 86px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.innerWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.innerWrap img.top {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.innerWrap .embedOneWrap {
+  position: absolute;
+  top: 69em;
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.innerWrap img.middle {
+  position: absolute;
+  width: 100%;
+  top: 110em;
+}
+
+.innerWrap .embedTwoWrap {
+  position: absolute;
+  top: 127em;
+  width: 414px;
+  height: 290px;
+  background: blue;
+}
+
+.innerWrap img.bottom {
+  position: absolute;
+  width: 100%;
+  top: 125em;
+}
+
+/* ************ YOUR CONTENT HERE ************ */
+ul {
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  padding-left: 10px;
+  font-size: 11px;
+  line-height: 12px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+li:first-child {
+  padding-left: 0;
+}
+
+a {
+  color: orange;
+  text-decoration: none;
+}
+
+/* Quick Fixes */
+.qfEmbedText {
+  text-align: center;
+}
+
+#qfEmbedClock h3 {
+  font-size: 1em;
+}
+
+.qfSubInfo {
+  padding-top: 1em;
+}
+
+.qfSmallTextOne {
+  position: relative;
+  top: -1em;
+  width: 45%;
+}
+
+.qfSmallTextOne a {
+  font-size: 0.8em;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.qfSmallTextOne img {
+  font-size: 1.6em;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  left: -0.5em;
+}
+
+.qfSmallTextTwo {
+  position: relative;
+  top: -1em;
+  width: 45%;
+  left: 0.5em;
+}
+
+.qfSmallTextTwo a {
+  font-size: 0.8em;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.qfSmallTextTwo img {
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  left: -0.2em;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-background-wrapper {
+    background-color: #001426;
+    position: relative;
+    overflow: hidden;
+    width: 414px;
+    height: 325px !important;
+  }
+
+  .no-touch .cd-background-wrapper {
+    -webkit-perspective: 4000px;
+    perspective: 4000px;
+  }
+
+  .cd-background-wrapper::before {
+    /* never visible - this is used in jQuery to check the device type */
+    content: 'web';
+    display: none;
+  }
+
+  .touch .cd-background-wrapper::before {
+    /* never visible - this is used in jQuery to check the device type */
+    content: 'mobile';
+  }
+
+  .cd-floating-background {
+    position: relative;
+  }
+
+  .cd-floating-background img {
+    width: 350px;
+    height: 350px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* fixes a Firefox bug - images not correctly rendered*/
+    background-color: rgba(255, 255, 255, 0.01);
+  }
+
+  .cd-floating-background img:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .no-touch .cd-floating-background {
+    top: 0;
+    left: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .no-touch .cd-floating-background.is-absolute {
+    position: absolute;
+  }
+
+  .no-touch .cd-floating-background img:first-child {
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px);
+  }
+
+  .no-touch .cd-floating-background img:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    bottom: 100px;
+    -webkit-transform: translateZ(290px);
+    transform: translateZ(290px);
+  }
+
+  .no-touch .cd-floating-background img:nth-child(3) {
+    -webkit-transform: translateZ(400px);
+    transform: translateZ(400px);
+  }
+
+  .no-touch.no-preserve-3d .cd-floating-background {
+    /* we target browsers that don't support preserve-3d and show just a standard image - no effect visible */
+    position: relative;
+  }
+}
